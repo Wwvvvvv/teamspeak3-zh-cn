@@ -1,0 +1,6 @@
+work/
+*.zip
+.DS_Store
+__pycache__/
+*.pyc
+TeamSpeak3-中文语言包.zip
