@@ -20,7 +20,7 @@ cd teamspeak3-zh-cn
 bash install.sh
 ```
 
-或者下载 [Release](../../releases) 里的 `TeamSpeak3-中文语言包.zip`，解压后双击 `安装中文.command`
+或者下载 [Release](../../releases) 里的 `TeamSpeak3-zh-CN.zip`，解压后双击 `安装中文.command`
 （首次可能需要在文件上右键 → 打开，或在“系统设置 → 隐私与安全性”里放行）。
 
 安装脚本做两件事：
