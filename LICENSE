@@ -19,12 +19,3 @@ AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
-
----
-
-This license applies to the scripts and build tooling in this repository,
-and to the translations authored in this repository (see NOTICE.md).
-
-It does NOT apply to translation text inherited from
-https://github.com/jitingcn/TS3-Translation_zh-CN, which carries no license
-file and remains under its author's copyright. See NOTICE.md for details.

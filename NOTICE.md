@@ -25,7 +25,11 @@ GitHub API 返回的 `license` 字段为 `null`。这意味着在法律意义上
 
 ## 脚本与构建工具
 
-`build.py`、`install.sh`、`portable/安装中文.command` 为本项目原创，采用 MIT 许可证（见 `LICENSE`）。
+`build.py`、`install.sh`、`make-release.sh`、`portable/安装中文.command` 为本项目原创，采用 MIT 许可证（见 `LICENSE`）。
+
+`LICENSE` 文件本身是标准 MIT 文本，GitHub 会将其识别为 MIT。但请注意：
+**该 MIT 授权不能覆盖上游译文部分**，详见上文。如需在项目中使用上游译文，
+请先取得上游作者授权。
 
 ## TeamSpeak 商标
 
