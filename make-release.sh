@@ -6,19 +6,24 @@ set -euo pipefail
 cd "$(dirname "$0")"
 [ -d dist ] || { echo "请先运行 python3 build.py" >&2; exit 1; }
 
+NAME="TeamSpeak3-中文语言包"
+OUT="TeamSpeak3-zh-CN.zip"
+
 STAGE="$(mktemp -d)"
 trap 'rm -rf "$STAGE"' EXIT
 
-mkdir -p "$STAGE/TeamSpeak3-中文语言包/translations"
-cp dist/*_zh.qm "$STAGE/TeamSpeak3-中文语言包/translations/"
-cp dist/*.ts3_translation "$STAGE/TeamSpeak3-中文语言包/" 2>/dev/null || true
-cp portable/安装中文.command "$STAGE/TeamSpeak3-中文语言包/"
-cp LICENSE NOTICE.md "$STAGE/TeamSpeak3-中文语言包/"
-chmod +x "$STAGE/TeamSpeak3-中文语言包/安装中文.command"
+mkdir -p "$STAGE/$NAME/translations"
+cp dist/*_zh.qm "$STAGE/$NAME/translations/"
+cp dist/*.ts3_translation "$STAGE/$NAME/" 2>/dev/null || true
+cp portable/安装中文.command "$STAGE/$NAME/"
+cp LICENSE NOTICE.md "$STAGE/$NAME/"
 
-OUT="TeamSpeak3-中文语言包.zip"
+# 去掉扩展属性（否则 zip 里会混入 __MACOSX/._* 垃圾文件）
+xattr -cr "$STAGE/$NAME" 2>/dev/null || true
+chmod +x "$STAGE/$NAME/安装中文.command"
+
 rm -f "$OUT"
-(cd "$STAGE" && ditto -c -k --sequesterRsrc "TeamSpeak3-中文语言包" "$OLDPWD/$OUT")
+(cd "$STAGE" && zip -rq -X "$OLDPWD/$OUT" "$NAME" -x "*.DS_Store" "*__MACOSX*")
 
 echo "生成: $PWD/$OUT ($(du -h "$OUT" | cut -f1))"
 unzip -l "$OUT"
